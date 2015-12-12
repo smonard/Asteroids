@@ -1,0 +1,1 @@
+./Debug/Actores_Asteroide.cpp.o ./Debug/Actores_NaveEspacial.cpp.o ./Debug/Actores_RayoLaser.cpp.o ./Debug/Actores_FabricaObjetoGrafica.cpp.o ./Debug/Base_JuegoAsteroides.cpp.o ./Debug/Base_AllegroAPI.cpp.o ./Debug/Base_EventosAllegro.cpp.o

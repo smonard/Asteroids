@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="JuegoAsteroides" Database="">
+  <Project Name="JuegoAsteroides" Path="JuegoAsteroides/JuegoAsteroides.project" Active="Yes"/>
+  <Environment>
+    <![CDATA[]]>
+  </Environment>
+  <Project Name="JuegoAsteroidesPruebas" Path="JuegoAsteroidesPruebas/JuegoAsteroidesPruebas.project" Active="No"/>
+  <Project Name="Ejecutable" Path="MainContainer/MainContainer.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Project Name="JuegoAsteroides" ConfigName="Debug"/>
+      <Project Name="JuegoAsteroidesPruebas" ConfigName="Debug"/>
+      <Project Name="Ejecutable" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="JuegoAsteroides" ConfigName="Release"/>
+      <Project Name="JuegoAsteroidesPruebas" ConfigName="Release"/>
+      <Project Name="Ejecutable" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

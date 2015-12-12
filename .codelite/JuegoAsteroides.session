@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides.workspace">
+  <int Value="3" Name="m_selectedTab"/>
+  <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Posicion.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Utilitarios/Sujeto.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="11" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/MainContainer/main.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="19" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/MainContainer/src/spike.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="26" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Utilitarios/ManejadorEventos.hpp" Name="FileName"/>
+      <int Value="4" Name="FirstVisibleLine"/>
+      <int Value="19" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Base/EventosAllegro.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="51" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Utilitarios/Excepciones/AllegroTecladoExcepcion.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Actores/ObjetoGraficoInterfaz.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="19" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Base/EventosAllegro.h" Name="FileName"/>
+      <int Value="2" Name="FirstVisibleLine"/>
+      <int Value="15" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Base/JuegoAsteroides.h" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="28" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Utilitarios/Observador.hpp" Name="FileName"/>
+      <int Value="2" Name="FirstVisibleLine"/>
+      <int Value="7" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Base/JuegoAsteroides.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="1" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Actores/FabricaObjetoGrafica.cpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Actores/FabricaObjetoGrafica.h" Name="FileName"/>
+      <int Value="2" Name="FirstVisibleLine"/>
+      <int Value="0" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Base/AllegroAPI.cpp" Name="FileName"/>
+      <int Value="58" Name="FirstVisibleLine"/>
+      <int Value="78" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Base/AllegroAPI.h" Name="FileName"/>
+      <int Value="31" Name="FirstVisibleLine"/>
+      <int Value="20" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Utilitarios/GestorMensajes.hpp" Name="FileName"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="24" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Actores/NaveEspacial.cpp" Name="FileName"/>
+      <int Value="16" Name="FirstVisibleLine"/>
+      <int Value="10" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="1" Name="Count"/>
+    <SerializedObject Name="Breakpoint0">
+      <wxString Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Actores/NaveEspacial.cpp" Name="file"/>
+      <int Value="9" Name="lineno"/>
+      <wxString Value="" Name="function_name"/>
+      <wxString Value="" Name="memory_address"/>
+      <int Value="1" Name="bp_type"/>
+      <int Value="0" Name="watchpoint_type"/>
+      <wxString Value="" Name="watchpt_data"/>
+      <CData Name="commandlist"/>
+      <bool Value="0" Name="regex"/>
+      <bool Value="0" Name="is_temp"/>
+      <bool Value="1" Name="is_enabled"/>
+      <int Value="0" Name="ignore_number"/>
+      <wxString Value="" Name="conditions"/>
+      <int Value="0" Name="origin"/>
+    </SerializedObject>
+  </SerializedObject>
+</Session>

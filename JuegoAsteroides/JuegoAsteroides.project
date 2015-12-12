@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="JuegoAsteroides" InternalType="Console">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="src">
+    <VirtualDirectory Name="Actores">
+      <File Name="src/Actores/Asteroide.h"/>
+      <File Name="src/Actores/Asteroide.cpp"/>
+      <File Name="src/Actores/NaveEspacial.h"/>
+      <File Name="src/Actores/NaveEspacial.cpp"/>
+      <File Name="src/Actores/RayoLaser.h"/>
+      <File Name="src/Actores/RayoLaser.cpp"/>
+      <File Name="src/Actores/ObjetoGraficoInterfaz.hpp"/>
+      <File Name="src/Actores/FabricaObjetoGrafica.h"/>
+      <File Name="src/Actores/FabricaObjetoGrafica.cpp"/>
+      <File Name="src/Actores/ActoresEnumeracion.hpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Base">
+      <File Name="src/Base/JuegoAsteroides.h"/>
+      <File Name="src/Base/JuegoAsteroides.cpp"/>
+      <File Name="src/Base/AllegroAPI.h"/>
+      <File Name="src/Base/AllegroAPI.cpp"/>
+      <File Name="src/Base/EventosAllegro.h"/>
+      <File Name="src/Base/EventosAllegro.cpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Utilitarios">
+      <File Name="src/Posicion.hpp"/>
+      <File Name="src/Linea.hpp"/>
+      <VirtualDirectory Name="Excepciones">
+        <File Name="src/Utilitarios/Excepciones/AllegroExcepcion.hpp"/>
+        <File Name="src/Utilitarios/Excepciones/AllegroInicializacionFallidaExcepcion.hpp"/>
+        <File Name="src/Utilitarios/Excepciones/AllegroPrimitivasExcepcion.hpp"/>
+        <File Name="src/Utilitarios/Excepciones/AllegroTecladoExcepcion.hpp"/>
+      </VirtualDirectory>
+      <File Name="src/Utilitarios/ManejadorEventos.hpp"/>
+      <File Name="src/Utilitarios/Sujeto.hpp"/>
+      <File Name="src/Utilitarios/Observador.hpp"/>
+      <File Name="src/Utilitarios/GestorMensajes.hpp"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
+  <Settings Type="Dynamic Library">
+    <GlobalSettings>
+      <Compiler Options="-std=c++14;-std=c++11" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="GCC" DebuggerType="LLDB Debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-O0;-std=c++14;-std=c++11" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="./"/>
+        <IncludePath Value="/usr/local/lib"/>
+        <IncludePath Value="/usr/local/include"/>
+      </Compiler>
+      <Linker Options="" Required="yes">
+        <LibraryPath Value="/usr/local/lib"/>
+        <Library Value="liballegro.dylib"/>
+        <Library Value="liballegro_acodec.dylib"/>
+        <Library Value="liballegro_audio.dylib"/>
+        <Library Value="liballegro_color.dylib"/>
+        <Library Value="liballegro_dialog.dylib"/>
+        <Library Value="liballegro_font.dylib"/>
+        <Library Value="liballegro_image.dylib"/>
+        <Library Value="liballegro_memfile.dylib"/>
+        <Library Value="liballegro_physfs.dylib"/>
+        <Library Value="liballegro_primitives.dylib"/>
+        <Library Value="liballegro_ttf.dylib"/>
+        <Library Value="liballegro_main.dylib"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/libJuegoAsteroides.dylib" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="yes">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="GCC" DebuggerType="LLDB Debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-O2;-Wall" C_Options="-O2;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+        <Preprocessor Value="NDEBUG"/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Release" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="yes">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>
