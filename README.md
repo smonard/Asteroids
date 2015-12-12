@@ -1,2 +1,2 @@
-# juego-asteriodes
 # juego-asteroides
+
