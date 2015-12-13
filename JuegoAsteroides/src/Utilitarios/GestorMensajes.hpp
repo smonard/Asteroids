@@ -1,6 +1,8 @@
 #ifndef GESTORMENSAJES_HPP
 #define GESTORMENSAJES_HPP
 
+#define RUTA_TIPOGRAFIA "/System/Library/Fonts/Menlo.ttc" 
+
 class GestorMensajes
 {
     ALLEGRO_FONT *font;
@@ -10,7 +12,7 @@ public:
 
     GestorMensajes()
     {
-        font = al_load_ttf_font("/System/Library/Fonts/Menlo.ttc", 28, 0);
+        font = al_load_ttf_font(RUTA_TIPOGRAFIA, 24, 0);
         if(font == 0)
             printf("err");
         color = al_map_rgb(0,0,0);
