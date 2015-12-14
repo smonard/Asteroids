@@ -3,11 +3,15 @@
 
 class Color
 {
+private:
+    
     unsigned char red;
     unsigned char green;
     unsigned char blue;
     unsigned char alpha;
+
 public:
+
     Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha;)
     {
         this->red = red;
@@ -15,10 +19,31 @@ public:
         this->blue = blue;
         this->alpha = alpha;
     }
+    
     virtual ~Color()
     {
     }
 
+    unsigned char GetAlpha() const
+    {
+        return alpha;
+    }
+    
+    unsigned char GetBlue() const
+    {
+        return blue;
+    }
+    
+    unsigned char GetGreen() const
+    {
+        return green;
+    }
+    
+    unsigned char GetRed() const
+    {
+        return red;
+    }
+    
 };
 
 #endif // COLOR_HPP
