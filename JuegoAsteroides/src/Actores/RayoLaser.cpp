@@ -1,6 +1,6 @@
 #include "RayoLaser.h"
 
-RayoLaser::RayoLaser(PosicionPantalla nposicion, ALLEGRO_COLOR ncolor)
+RayoLaser::RayoLaser(PosicionPantalla nposicion, Color * ncolor)
     :ObjetoGraficoInterfaz(nposicion,ncolor)
 {
     variacion_orientacion = 0.0000002;
@@ -24,8 +24,8 @@ const PosicionPantalla& RayoLaser::obtenerPosicion() const
 void RayoLaser::dibujarse()
 {
     avanzar();
-    AllegroAPI::obtenerInstancia()->aplicarTransformacion(posicion,orientacion);
-    AllegroAPI::obtenerInstancia()->dibujarLinea(Linea(PosicionPantalla(0,9), PosicionPantalla(0,-11)), color , 4.0f);
+    CoreLib::obtenerInstancia()->aplicarTransformacion(posicion,orientacion);
+    CoreLib::obtenerInstancia()->dibujarLinea(Linea(PosicionPantalla(0,9), PosicionPantalla(0,-11)), *color , 4.0f);
 }
 
 bool RayoLaser::esDeTipo(actorEnum tipoActor){

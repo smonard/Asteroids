@@ -2,21 +2,21 @@
 
 #include "allegro5/allegro.h"
 #include "base/juegoAsteroides.h"
-#include "base/AllegroAPI.h"
+#include "ClasesDominio/Pantalla.hpp"
 #include "src/UtilitariosPruebas/PosicionPantallaPruebas.hpp"
 
 
 
 int main(int argc, char **argv){
 
-    AllegroAPI& allegro = *AllegroAPI::obtenerInstancia();
+    CoreLib& allegro = *CoreLib::obtenerInstancia();
     allegro.inicializarComponentesAllegro();
-    ALLEGRO_DISPLAY *display = allegro.crearPantalla();
+    Pantalla *display = allegro.crearPantalla();
     JuegoAsteroides* juego = new JuegoAsteroides();
     sleep(1);
     (*juego).iniciarJuego();
-    allegro.destruirPantalla(display);
     delete juego;
+    allegro.destruirPantalla(display);
     return 0;
 }
 

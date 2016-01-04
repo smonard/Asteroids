@@ -11,7 +11,7 @@ private:
     
 public:
 
-    NaveEspacial(PosicionPantalla nposicion, ALLEGRO_COLOR ncolor);
+    NaveEspacial(PosicionPantalla nposicion, Color * ncolor);
     void dibujarse() override;
     
     const PosicionPantalla& obtenerPosicion() const override;

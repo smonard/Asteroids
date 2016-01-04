@@ -2,7 +2,7 @@
 #define ASTEROIDEPRUEBAS_HPP
 
 #include <Actores/Asteroide.h>
-#include <Base/AllegroAPI.h>
+#include <Base/CoreLib.h>
 
 
 SUITE(AsteroidePruebas)

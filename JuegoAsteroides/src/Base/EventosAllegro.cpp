@@ -41,7 +41,9 @@ void EventosAllegro::adjuntarObservador(Observador* observadorNuevo){
 
 EventosAllegro::~EventosAllegro()
 {
-    
+    sigueEscuchando = false;
+    subProcesoEsperaEventos->join();
+    //delete queue;
 }
 
 EventosAllegro::EventosAllegro()

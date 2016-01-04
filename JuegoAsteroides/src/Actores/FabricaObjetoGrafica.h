@@ -21,7 +21,7 @@ private:
 public:
     static FabricaObjetoGrafica* obtenerInstancia();
     static void liberarse();
-    ObjetoGraficoInterfaz * crearObjetoVisual(actorEnum actor_a_crear, PosicionPantalla nposicion, ALLEGRO_COLOR ncolor);
+    ObjetoGraficoInterfaz * crearObjetoVisual(actorEnum actor_a_crear, PosicionPantalla nposicion, Color * ncolor);
     bool esDeTipo(actorEnum actor_tipo, ObjetoGraficoInterfaz* objetoAdeterminar);
 };
 

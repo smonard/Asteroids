@@ -2,7 +2,7 @@
 #define FABRICAOBJETOSGRAFICOSPRUEBAS_HPP
 
 #include <Actores/FabricaObjetoGrafica.h>
-#include <Base/AllegroAPI.h>
+#include <Base/CoreLib.h>
 
 
 SUITE(FabricaObjetoGraficaPruebas)

@@ -1,8 +1,9 @@
 //#ifndef EVENTOSALLEGRO_H
 //#define EVENTOSALLEGRO_H
-#include "AllegroAPI.h"
+#include "AllegroAPI.hpp"
 #include "../Utilitarios/Sujeto.hpp"
-
+#include <stdio.h>
+#include <thread>
 
 class EventosAllegro : public Sujeto
 {

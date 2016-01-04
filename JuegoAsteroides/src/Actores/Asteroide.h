@@ -12,7 +12,7 @@ private:
     void dibujarseDestruido();
     
 public:
-    Asteroide(PosicionPantalla nposicion, ALLEGRO_COLOR ncolor);
+    Asteroide(PosicionPantalla nposicion, Color * ncolor);
     const bool estaDestruido() const
     {
         return destruido;

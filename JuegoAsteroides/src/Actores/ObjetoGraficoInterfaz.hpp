@@ -2,7 +2,8 @@
 #define ACTORINTERFAZ_HPP
 
 #include "../Posicion.hpp"
-#include "../Base/AllegroAPI.h"
+#include "../Base/CoreLib.h"
+#include "../ClasesDominio/Color.hpp"
 #include "ActoresEnumeracion.hpp"
 
 class ObjetoGraficoInterfaz
@@ -18,11 +19,11 @@ protected:
     
     float variacion_orientacion;
      
-    ALLEGRO_COLOR color;
+    Color * color;
     
 public:
 
-    ObjetoGraficoInterfaz(PosicionPantalla nposicion, ALLEGRO_COLOR ncolor){
+    ObjetoGraficoInterfaz(PosicionPantalla nposicion, Color * ncolor){
         posicion = nposicion;
         color = ncolor;
     }    
@@ -35,7 +36,7 @@ public:
     }
     
     bool estaFueraDeLaPantalla(){
-       return  !((this)->obtenerPosicion().GetY() < AllegroAPI::obtenerInstancia()->obtenerAlto() && (this)->obtenerPosicion().GetY() > 0);
+       return  !((this)->obtenerPosicion().GetY() < CoreLib::obtenerInstancia()->obtenerAlto() && (this)->obtenerPosicion().GetY() > 0);
     }
 
     bool estaEnPosicionSimilarCon(ObjetoGraficoInterfaz* objVisual2){
@@ -50,7 +51,9 @@ public:
     virtual void dibujarse() {};
     virtual const PosicionPantalla& obtenerPosicion() const {};
     virtual bool esDeTipo(actorEnum tipoActor) {};
-    virtual ~ObjetoGraficoInterfaz(){}
+    virtual ~ObjetoGraficoInterfaz(){
+        delete color;
+    }
     
 };
 

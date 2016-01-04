@@ -1,15 +1,14 @@
-#ifndef ALLEGROAPI_H
-#define ALLEGROAPI_H
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_font.h>
-#include <allegro5/allegro_image.h>
-#include <allegro5/allegro_primitives.h>
-#include <allegro5/allegro_color.h>
-#include <allegro5/allegro_ttf.h>
+#ifndef CORELIB_H
+#define CORELIB_H
+
+#include "AllegroAPI.hpp"
 #include "../Linea.hpp"
 #include "../Utilitarios/Excepciones/AllegroInicializacionFallidaExcepcion.hpp"
 #include "../Utilitarios/Excepciones/AllegroPrimitivasExcepcion.hpp"
 #include "../Utilitarios/Excepciones/AllegroTecladoExcepcion.hpp"
+#include "../ClasesDominio/Color.hpp"
+#include "../ClasesDominio/Pantalla.hpp"
+#include "../ClasesDominio/Tipografia.hpp"
 
 #include <unistd.h>
 #include <stdio.h>
@@ -22,16 +21,16 @@
 
 #include <pthread.h>
 
-class AllegroAPI
+class CoreLib
 {
 private:
-    static AllegroAPI* instancia;
+    static CoreLib* instancia;
 
     int ancho_pantalla = 600;
     int alto_pantalla = 600;
 
-    AllegroAPI();
-    ~AllegroAPI();
+    CoreLib();
+    ~CoreLib();
 
 public:
     int obtenerAlto() const
@@ -42,21 +41,27 @@ public:
     {
         return ancho_pantalla;
     }
-    static AllegroAPI* obtenerInstancia();
+    static CoreLib* obtenerInstancia();
 
     static void liberarse();
 
     int inicializarComponentesAllegro();
 
-    ALLEGRO_DISPLAY* crearPantalla();
+    Pantalla* crearPantalla();
 
-    void destruirPantalla(ALLEGRO_DISPLAY* display);
+    void destruirPantalla(Pantalla* display);
 
-    void dibujarLinea(Linea linea, ALLEGRO_COLOR color, float grosor);
+    void dibujarLinea(Linea linea, Color color, float grosor);
 
     void aplicarTransformacion(PosicionPantalla posicion, float orientacion);
 
-    ALLEGRO_COLOR obtenerColor(char red, char green, char blue);
+    Tipografia * cargarFuente(char * ruta, char tamaño);
+    
+    void dibujarTexto(Tipografia * tipo, Color * color ,string texto, PosicionPantalla posicion);
+    
+    Color * obtenerColor(unsigned char red,unsigned char green,unsigned char blue);
+    
+    void pintarPantalla(Color color);
 };
 
 #endif // ALLEGROAPI_H

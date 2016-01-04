@@ -10,7 +10,7 @@ class RayoLaser : public ObjetoGraficoInterfaz
 private:
     
 public:
-    RayoLaser(PosicionPantalla nposicion, ALLEGRO_COLOR ncolor);
+    RayoLaser(PosicionPantalla nposicion, Color * ncolor);
     ~RayoLaser();
     void avanzar();
     void dibujarse() override;

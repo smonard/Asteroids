@@ -2,7 +2,7 @@
 
 
 
-NaveEspacial::NaveEspacial(PosicionPantalla nposicion, ALLEGRO_COLOR ncolor)
+NaveEspacial::NaveEspacial(PosicionPantalla nposicion, Color * ncolor)
     :ObjetoGraficoInterfaz(nposicion,ncolor)
 {
     variacion_orientacion = 0.0000002;
@@ -12,11 +12,11 @@ NaveEspacial::NaveEspacial(PosicionPantalla nposicion, ALLEGRO_COLOR ncolor)
 
 void NaveEspacial::dibujarse()
 {
-    AllegroAPI::obtenerInstancia()->aplicarTransformacion(posicion, orientacion);
-    AllegroAPI::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(-8, 9),  PosicionPantalla(0, -11)), color, 4.0f); 
-    AllegroAPI::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(0, -11),  PosicionPantalla( 8, 9)), color, 4.0f); 
-    AllegroAPI::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(-6, 4),  PosicionPantalla(-1, 4)), color, 4.0f); 
-    AllegroAPI::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(6, 4),  PosicionPantalla( 1, 4)), color, 4.0f);
+    CoreLib::obtenerInstancia()->aplicarTransformacion(posicion, orientacion);
+    CoreLib::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(-8, 9),  PosicionPantalla(0, -11)), *color, 4.0f); 
+    CoreLib::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(0, -11),  PosicionPantalla( 8, 9)), *color, 4.0f); 
+    CoreLib::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(-6, 4),  PosicionPantalla(-1, 4)), *color, 4.0f); 
+    CoreLib::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(6, 4),  PosicionPantalla( 1, 4)), *color, 4.0f);
 }
 
 const PosicionPantalla& NaveEspacial::obtenerPosicion() const
@@ -36,7 +36,7 @@ void NaveEspacial::irDerecha(){
 
 ObjetoGraficoInterfaz* NaveEspacial::disparar()
 {
-    ALLEGRO_COLOR color_rojo = al_map_rgb(255,0,0);
+    Color *color_rojo = new Color(255,0,0,255);
     ObjetoGraficoInterfaz* rayo = FabricaObjetoGrafica::obtenerInstancia()->crearObjetoVisual(rayoLaser, posicion, color_rojo);
     return rayo;
 }

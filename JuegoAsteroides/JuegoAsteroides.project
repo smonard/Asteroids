@@ -35,10 +35,11 @@
     <VirtualDirectory Name="Base">
       <File Name="src/Base/JuegoAsteroides.h"/>
       <File Name="src/Base/JuegoAsteroides.cpp"/>
-      <File Name="src/Base/AllegroAPI.h"/>
-      <File Name="src/Base/AllegroAPI.cpp"/>
       <File Name="src/Base/EventosAllegro.h"/>
       <File Name="src/Base/EventosAllegro.cpp"/>
+      <File Name="src/Base/CoreLib.h"/>
+      <File Name="src/Base/CoreLib.cpp"/>
+      <File Name="src/Base/AllegroAPI.hpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Utilitarios">
       <File Name="src/Posicion.hpp"/>
@@ -53,6 +54,11 @@
       <File Name="src/Utilitarios/Sujeto.hpp"/>
       <File Name="src/Utilitarios/Observador.hpp"/>
       <File Name="src/Utilitarios/GestorMensajes.hpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="ClasesDominio">
+      <File Name="src/ClasesDominio/Color.hpp"/>
+      <File Name="src/ClasesDominio/Pantalla.hpp"/>
+      <File Name="src/ClasesDominio/Tipografia.hpp"/>
     </VirtualDirectory>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>

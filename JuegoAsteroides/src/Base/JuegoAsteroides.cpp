@@ -11,9 +11,9 @@ JuegoAsteroides::JuegoAsteroides(){
     eventosAllegro = new EventosAllegro();
     eventosAllegro->adjuntarObservador(this);
     gestorMensajes = new GestorMensajes();
-    PosicionPantalla posicionNave(AllegroAPI::obtenerInstancia()->obtenerAncho() / 2,AllegroAPI::obtenerInstancia()->obtenerAlto()-20);
+    PosicionPantalla posicionNave(CoreLib::obtenerInstancia()->obtenerAncho() / 2,CoreLib::obtenerInstancia()->obtenerAlto()-20);
     fabricaActores = FabricaObjetoGrafica::obtenerInstancia();
-    naveEspacialActual =  (NaveEspacial*)fabricaActores->crearObjetoVisual(naveEspacial, posicionNave, AllegroAPI::obtenerInstancia()->obtenerColor(0,150,0));
+    naveEspacialActual =  (NaveEspacial*)fabricaActores->crearObjetoVisual(naveEspacial, posicionNave,CoreLib::obtenerInstancia()->obtenerColor(0,150,0));
     lista_actores={};   
     lista_actores.push_back(naveEspacialActual);
 }
@@ -35,7 +35,7 @@ void JuegoAsteroides::iniciarCreacionAsteroides() {
         while(sigueEjecutando){
             usleep(frecuenciaCreacionAsteroides);
             nave_mutex.lock();
-            lista_actores.push_back(fabricaActores->crearObjetoVisual(asteroide, PosicionPantalla(rand() % AllegroAPI::obtenerInstancia()->obtenerAncho(),20.0), AllegroAPI::obtenerInstancia()->obtenerColor(0,255,255)));
+            lista_actores.push_back(fabricaActores->crearObjetoVisual(asteroide, PosicionPantalla(rand() % CoreLib::obtenerInstancia()->obtenerAncho(),20.0), CoreLib::obtenerInstancia()->obtenerColor(0,255,255)));
             nave_mutex.unlock();
         }
     });
@@ -70,6 +70,9 @@ void JuegoAsteroides::ejecutarEventoTeclado(int teclaPresionada){
         case ALLEGRO_KEY_SPACE:
             lista_actores.push_back((*naveEspacialActual).disparar());
         break;
+        case ALLEGRO_KEY_ESCAPE:
+            sigueEjecutando = false;
+        break;
         default :
         break;
     }
@@ -80,7 +83,6 @@ void JuegoAsteroides::ejecutarEventoTeclado(int teclaPresionada){
  void JuegoAsteroides::actualizarObjetosVisuales(){
     borrarPantalla();
     string texto = "Puntaje:" + std::to_string(puntaje);
-    //str.append(std::to_string(puntaje)).c_str();
     gestorMensajes->dibujarTexto(texto, PosicionPantalla(10,10));
     for(std::list<ObjetoGraficoInterfaz*>::const_iterator objetoVisual=lista_actores.begin(); objetoVisual!=lista_actores.end(); ++objetoVisual)
     {
@@ -97,8 +99,8 @@ void JuegoAsteroides::ejecutarEventoTeclado(int teclaPresionada){
             if(naveEspacialActual->estaEnPosicionSimilarCon(*objetoVisual) && !((Asteroide*)(*objetoVisual))->estaDestruido()){
                 destruirObjeto(naveEspacialActual);
                 naveEspacialActual = (NaveEspacial*)fabricaActores->crearObjetoVisual(naveEspacial,
-                    PosicionPantalla(AllegroAPI::obtenerInstancia()->obtenerAncho() / 2,AllegroAPI::obtenerInstancia()->obtenerAlto() - 20), 
-                    AllegroAPI::obtenerInstancia()->obtenerColor(0 + puntaje,25,255));
+                    PosicionPantalla(CoreLib::obtenerInstancia()->obtenerAncho() / 2,CoreLib::obtenerInstancia()->obtenerAlto() - 20),
+                    (CoreLib::obtenerInstancia()->obtenerColor(0 + puntaje,150,0)));
                 lista_actores.push_back(naveEspacialActual);
                 break; 
             }
@@ -111,6 +113,16 @@ void JuegoAsteroides::destruirObjeto(ObjetoGraficoInterfaz* objetoAdestruir){
     delete objetoAdestruir;
 }
 
+void JuegoAsteroides::destruirObjetos(){
+    while(lista_actores.size() > 0){
+        for(std::list<ObjetoGraficoInterfaz*>::const_iterator iterador=lista_actores.begin(); iterador!=lista_actores.end(); ++iterador)
+        {
+            destruirObjeto(*iterador);
+            break;
+        }
+    }
+}
+
 bool JuegoAsteroides::estaTocadoPorRayo(ObjetoGraficoInterfaz* asteroide){
     for(std::list<ObjetoGraficoInterfaz*>::const_iterator iterador=lista_actores.begin(); iterador!=lista_actores.end(); ++iterador)
     {
@@ -121,7 +133,7 @@ bool JuegoAsteroides::estaTocadoPorRayo(ObjetoGraficoInterfaz* asteroide){
 }
 
 void JuegoAsteroides::borrarPantalla(){
-    al_clear_to_color(AllegroAPI::obtenerInstancia()->obtenerColor(255,255,255));
+    CoreLib::obtenerInstancia()->pintarPantalla(*(CoreLib::obtenerInstancia()->obtenerColor(255,255,255)));
 }
 
 void JuegoAsteroides::detenerJuego(){
@@ -130,8 +142,10 @@ void JuegoAsteroides::detenerJuego(){
 }
 
 JuegoAsteroides::~JuegoAsteroides(){
-    delete eventosAllegro;
+    subProcesoCreacionAsteoides->join();
     fabricaActores->liberarse();
-    delete naveEspacialActual;
+    delete gestorMensajes;
+    delete eventosAllegro;
+    destruirObjetos();
 }
 

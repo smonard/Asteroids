@@ -53,9 +53,8 @@ public:
     ~JuegoAsteroides();
     void ejecutarEventoTeclado(int teclaPresionada);
     bool estaTocadoPorRayo(ObjetoGraficoInterfaz* asteroide);
-    
-    
-    
+    void destruirObjetos();
+
 };
 
 #endif // JUEGOASTEROIDES_H

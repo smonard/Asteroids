@@ -24,7 +24,7 @@ void FabricaObjetoGrafica::liberarse()
     instancia = 0;
 }
 
-ObjetoGraficoInterfaz* FabricaObjetoGrafica::crearObjetoVisual(actorEnum actor_a_crear, PosicionPantalla nposicion, ALLEGRO_COLOR ncolor)
+ObjetoGraficoInterfaz* FabricaObjetoGrafica::crearObjetoVisual(actorEnum actor_a_crear, PosicionPantalla nposicion, Color * ncolor)
 {
     ObjetoGraficoInterfaz* objeto = NULL;
     switch(actor_a_crear)

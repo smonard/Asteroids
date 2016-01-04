@@ -133,14 +133,6 @@ $(IntermediateDirectory)/Base_JuegoAsteroides.cpp$(DependSuffix): src/Base/Juego
 $(IntermediateDirectory)/Base_JuegoAsteroides.cpp$(PreprocessSuffix): src/Base/JuegoAsteroides.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Base_JuegoAsteroides.cpp$(PreprocessSuffix) "src/Base/JuegoAsteroides.cpp"
 
-$(IntermediateDirectory)/Base_AllegroAPI.cpp$(ObjectSuffix): src/Base/AllegroAPI.cpp $(IntermediateDirectory)/Base_AllegroAPI.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Base/AllegroAPI.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Base_AllegroAPI.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Base_AllegroAPI.cpp$(DependSuffix): src/Base/AllegroAPI.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Base_AllegroAPI.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Base_AllegroAPI.cpp$(DependSuffix) -MM "src/Base/AllegroAPI.cpp"
-
-$(IntermediateDirectory)/Base_AllegroAPI.cpp$(PreprocessSuffix): src/Base/AllegroAPI.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Base_AllegroAPI.cpp$(PreprocessSuffix) "src/Base/AllegroAPI.cpp"
-
 $(IntermediateDirectory)/Base_EventosAllegro.cpp$(ObjectSuffix): src/Base/EventosAllegro.cpp $(IntermediateDirectory)/Base_EventosAllegro.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Base/EventosAllegro.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Base_EventosAllegro.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Base_EventosAllegro.cpp$(DependSuffix): src/Base/EventosAllegro.cpp
@@ -148,6 +140,14 @@ $(IntermediateDirectory)/Base_EventosAllegro.cpp$(DependSuffix): src/Base/Evento
 
 $(IntermediateDirectory)/Base_EventosAllegro.cpp$(PreprocessSuffix): src/Base/EventosAllegro.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Base_EventosAllegro.cpp$(PreprocessSuffix) "src/Base/EventosAllegro.cpp"
+
+$(IntermediateDirectory)/Base_CoreLib.cpp$(ObjectSuffix): src/Base/CoreLib.cpp $(IntermediateDirectory)/Base_CoreLib.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/Base/CoreLib.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Base_CoreLib.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Base_CoreLib.cpp$(DependSuffix): src/Base/CoreLib.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Base_CoreLib.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Base_CoreLib.cpp$(DependSuffix) -MM "src/Base/CoreLib.cpp"
+
+$(IntermediateDirectory)/Base_CoreLib.cpp$(PreprocessSuffix): src/Base/CoreLib.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Base_CoreLib.cpp$(PreprocessSuffix) "src/Base/CoreLib.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
