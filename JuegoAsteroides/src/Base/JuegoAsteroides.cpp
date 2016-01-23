@@ -7,13 +7,16 @@ bool JuegoAsteroides::getSigueEjecutando(){
     return sigueEjecutando;
 }
 
-JuegoAsteroides::JuegoAsteroides(){
+JuegoAsteroides::JuegoAsteroides(LibreriaJuego* core){
+    pantalla = core->GetPantalla();
+    graficador = core->GetGraficador();
     eventosAllegro = new EventosAllegro();
     eventosAllegro->adjuntarObservador(this);
-    gestorMensajes = new GestorMensajes();
-    PosicionPantalla posicionNave(CoreLib::obtenerInstancia()->obtenerAncho() / 2,CoreLib::obtenerInstancia()->obtenerAlto()-20);
+    PosicionPantalla posicionNave(pantalla->obtenerAncho() / 2,pantalla->obtenerAlto()-20);
     fabricaActores = FabricaObjetoGrafica::obtenerInstancia();
-    naveEspacialActual =  (NaveEspacial*)fabricaActores->crearObjetoVisual(naveEspacial, posicionNave,CoreLib::obtenerInstancia()->obtenerColor(0,150,0));
+    Color *color = new Color(0,150,0);
+    naveEspacialActual =  (NaveEspacial*)fabricaActores->crearObjetoVisual(naveEspacial, posicionNave,color);
+    naveEspacialActual->fijarGraficador(graficador);
     lista_actores={};   
     lista_actores.push_back(naveEspacialActual);
 }
@@ -32,10 +35,13 @@ void JuegoAsteroides::iniciarMetricas(){
 void JuegoAsteroides::iniciarCreacionAsteroides() {
     subProcesoCreacionAsteoides = new std::thread([&]()-> void {
         actorEnum actor_asteroide = asteroide;
+        Color *color = new Color(0,255,255);
         while(sigueEjecutando){
             usleep(frecuenciaCreacionAsteroides);
             nave_mutex.lock();
-            lista_actores.push_back(fabricaActores->crearObjetoVisual(asteroide, PosicionPantalla(rand() % CoreLib::obtenerInstancia()->obtenerAncho(),20.0), CoreLib::obtenerInstancia()->obtenerColor(0,255,255)));
+            lista_actores.push_back(
+                (ObjetoGraficoInterfaz*)((fabricaActores->crearObjetoVisual(asteroide, PosicionPantalla(rand() % pantalla->obtenerAncho(),20.0), color))->fijarGraficador(graficador))
+                );
             nave_mutex.unlock();
         }
     });
@@ -78,16 +84,15 @@ void JuegoAsteroides::ejecutarEventoTeclado(int teclaPresionada){
     }
 }
 
-
-
- void JuegoAsteroides::actualizarObjetosVisuales(){
+void JuegoAsteroides::actualizarObjetosVisuales(){
     borrarPantalla();
     string texto = "Puntaje:" + std::to_string(puntaje);
-    gestorMensajes->dibujarTexto(texto, PosicionPantalla(10,10));
+    //gestorMensajes->dibujarTexto(texto, PosicionPantalla(10,10));
     for(std::list<ObjetoGraficoInterfaz*>::const_iterator objetoVisual=lista_actores.begin(); objetoVisual!=lista_actores.end(); ++objetoVisual)
     {
+        Color* color = new Color(0 + puntaje,150,0);
         (*objetoVisual)->dibujarse();
-        if((*objetoVisual)->estaFueraDeLaPantalla()){
+        if((*objetoVisual)->estaFueraDeLaPantalla(pantalla->obtenerAlto())){
             destruirObjeto(*objetoVisual); 
             break; 
         }
@@ -99,8 +104,11 @@ void JuegoAsteroides::ejecutarEventoTeclado(int teclaPresionada){
             if(naveEspacialActual->estaEnPosicionSimilarCon(*objetoVisual) && !((Asteroide*)(*objetoVisual))->estaDestruido()){
                 destruirObjeto(naveEspacialActual);
                 naveEspacialActual = (NaveEspacial*)fabricaActores->crearObjetoVisual(naveEspacial,
-                    PosicionPantalla(CoreLib::obtenerInstancia()->obtenerAncho() / 2,CoreLib::obtenerInstancia()->obtenerAlto() - 20),
-                    (CoreLib::obtenerInstancia()->obtenerColor(0 + puntaje,150,0)));
+                    PosicionPantalla(pantalla->obtenerAncho() / 2, pantalla->obtenerAlto() - 20),
+                    (
+                    color
+                    ));
+                naveEspacialActual->fijarGraficador(graficador);
                 lista_actores.push_back(naveEspacialActual);
                 break; 
             }
@@ -133,7 +141,8 @@ bool JuegoAsteroides::estaTocadoPorRayo(ObjetoGraficoInterfaz* asteroide){
 }
 
 void JuegoAsteroides::borrarPantalla(){
-    CoreLib::obtenerInstancia()->pintarPantalla(*(CoreLib::obtenerInstancia()->obtenerColor(255,255,255)));
+    Color* color = new Color(255,255,255);
+    pantalla->pintarPantalla(*color);
 }
 
 void JuegoAsteroides::detenerJuego(){
@@ -144,7 +153,7 @@ void JuegoAsteroides::detenerJuego(){
 JuegoAsteroides::~JuegoAsteroides(){
     subProcesoCreacionAsteoides->join();
     fabricaActores->liberarse();
-    delete gestorMensajes;
+    //delete gestorMensajes;
     delete eventosAllegro;
     destruirObjetos();
 }

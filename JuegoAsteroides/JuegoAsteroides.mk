@@ -36,12 +36,12 @@ ObjectsFileList        :="JuegoAsteroides.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
-IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch)./ $(IncludeSwitch)/usr/local/lib $(IncludeSwitch)/usr/local/include 
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch)./ $(IncludeSwitch)/usr/local/lib $(IncludeSwitch)/usr/local/include $(IncludeSwitch)/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/include 
 IncludePCH             := 
 RcIncludePath          := 
-Libs                   := $(LibrarySwitch)allegro $(LibrarySwitch)allegro_acodec $(LibrarySwitch)allegro_audio $(LibrarySwitch)allegro_color $(LibrarySwitch)allegro_dialog $(LibrarySwitch)allegro_font $(LibrarySwitch)allegro_image $(LibrarySwitch)allegro_memfile $(LibrarySwitch)allegro_physfs $(LibrarySwitch)allegro_primitives $(LibrarySwitch)allegro_ttf $(LibrarySwitch)allegro_main 
-ArLibs                 :=  "liballegro.dylib" "liballegro_acodec.dylib" "liballegro_audio.dylib" "liballegro_color.dylib" "liballegro_dialog.dylib" "liballegro_font.dylib" "liballegro_image.dylib" "liballegro_memfile.dylib" "liballegro_physfs.dylib" "liballegro_primitives.dylib" "liballegro_ttf.dylib" "liballegro_main.dylib" 
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/usr/local/lib 
+Libs                   := $(LibrarySwitch)allegro $(LibrarySwitch)allegro_acodec $(LibrarySwitch)allegro_audio $(LibrarySwitch)allegro_color $(LibrarySwitch)allegro_dialog $(LibrarySwitch)allegro_font $(LibrarySwitch)allegro_image $(LibrarySwitch)allegro_memfile $(LibrarySwitch)allegro_physfs $(LibrarySwitch)allegro_primitives $(LibrarySwitch)allegro_ttf $(LibrarySwitch)allegro_main $(LibrarySwitch)sfml-graphics $(LibrarySwitch)sfml-window $(LibrarySwitch)sfml-system 
+ArLibs                 :=  "liballegro.dylib" "liballegro_acodec.dylib" "liballegro_audio.dylib" "liballegro_color.dylib" "liballegro_dialog.dylib" "liballegro_font.dylib" "liballegro_image.dylib" "liballegro_memfile.dylib" "liballegro_physfs.dylib" "liballegro_primitives.dylib" "liballegro_ttf.dylib" "liballegro_main.dylib" "sfml-graphics" "sfml-window" "sfml-system" 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/usr/local/lib $(LibraryPathSwitch)/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/lib $(LibraryPathSwitch)/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/Frameworks $(LibraryPathSwitch)/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/extlibs 
 
 ##
 ## Common variables
@@ -60,7 +60,8 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=$(IntermediateDirectory)/Actores_Asteroide.cpp$(ObjectSuffix) $(IntermediateDirectory)/Actores_NaveEspacial.cpp$(ObjectSuffix) $(IntermediateDirectory)/Actores_RayoLaser.cpp$(ObjectSuffix) $(IntermediateDirectory)/Actores_FabricaObjetoGrafica.cpp$(ObjectSuffix) $(IntermediateDirectory)/Base_JuegoAsteroides.cpp$(ObjectSuffix) $(IntermediateDirectory)/Base_AllegroAPI.cpp$(ObjectSuffix) $(IntermediateDirectory)/Base_EventosAllegro.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/Actores_Asteroide.cpp$(ObjectSuffix) $(IntermediateDirectory)/Actores_NaveEspacial.cpp$(ObjectSuffix) $(IntermediateDirectory)/Actores_RayoLaser.cpp$(ObjectSuffix) $(IntermediateDirectory)/Actores_FabricaObjetoGrafica.cpp$(ObjectSuffix) $(IntermediateDirectory)/Base_JuegoAsteroides.cpp$(ObjectSuffix) $(IntermediateDirectory)/Base_EventosAllegro.cpp$(ObjectSuffix) $(IntermediateDirectory)/Base_CoreLib.cpp$(ObjectSuffix) $(IntermediateDirectory)/LibreriaJuego_GraficadorAllegro.cpp$(ObjectSuffix) $(IntermediateDirectory)/LibreriaJuego_PantallaAllegro.cpp$(ObjectSuffix) $(IntermediateDirectory)/LibreriaJuego_TipografiaAllegro.cpp$(ObjectSuffix) \
+	$(IntermediateDirectory)/LibreriaJuegoSFML_GraficadorSFML.cpp$(ObjectSuffix) $(IntermediateDirectory)/LibreriaJuegoSFML_PantallaSFML.cpp$(ObjectSuffix) $(IntermediateDirectory)/LibreriaJuegoSFML_TipografiaSFML.cpp$(ObjectSuffix) 
 
 
 
@@ -148,6 +149,54 @@ $(IntermediateDirectory)/Base_CoreLib.cpp$(DependSuffix): src/Base/CoreLib.cpp
 
 $(IntermediateDirectory)/Base_CoreLib.cpp$(PreprocessSuffix): src/Base/CoreLib.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Base_CoreLib.cpp$(PreprocessSuffix) "src/Base/CoreLib.cpp"
+
+$(IntermediateDirectory)/LibreriaJuego_GraficadorAllegro.cpp$(ObjectSuffix): src/LibreriaJuego/GraficadorAllegro.cpp $(IntermediateDirectory)/LibreriaJuego_GraficadorAllegro.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/LibreriaJuego/GraficadorAllegro.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/LibreriaJuego_GraficadorAllegro.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/LibreriaJuego_GraficadorAllegro.cpp$(DependSuffix): src/LibreriaJuego/GraficadorAllegro.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/LibreriaJuego_GraficadorAllegro.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/LibreriaJuego_GraficadorAllegro.cpp$(DependSuffix) -MM "src/LibreriaJuego/GraficadorAllegro.cpp"
+
+$(IntermediateDirectory)/LibreriaJuego_GraficadorAllegro.cpp$(PreprocessSuffix): src/LibreriaJuego/GraficadorAllegro.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/LibreriaJuego_GraficadorAllegro.cpp$(PreprocessSuffix) "src/LibreriaJuego/GraficadorAllegro.cpp"
+
+$(IntermediateDirectory)/LibreriaJuego_PantallaAllegro.cpp$(ObjectSuffix): src/LibreriaJuego/PantallaAllegro.cpp $(IntermediateDirectory)/LibreriaJuego_PantallaAllegro.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/LibreriaJuego/PantallaAllegro.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/LibreriaJuego_PantallaAllegro.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/LibreriaJuego_PantallaAllegro.cpp$(DependSuffix): src/LibreriaJuego/PantallaAllegro.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/LibreriaJuego_PantallaAllegro.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/LibreriaJuego_PantallaAllegro.cpp$(DependSuffix) -MM "src/LibreriaJuego/PantallaAllegro.cpp"
+
+$(IntermediateDirectory)/LibreriaJuego_PantallaAllegro.cpp$(PreprocessSuffix): src/LibreriaJuego/PantallaAllegro.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/LibreriaJuego_PantallaAllegro.cpp$(PreprocessSuffix) "src/LibreriaJuego/PantallaAllegro.cpp"
+
+$(IntermediateDirectory)/LibreriaJuego_TipografiaAllegro.cpp$(ObjectSuffix): src/LibreriaJuego/TipografiaAllegro.cpp $(IntermediateDirectory)/LibreriaJuego_TipografiaAllegro.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/LibreriaJuego/TipografiaAllegro.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/LibreriaJuego_TipografiaAllegro.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/LibreriaJuego_TipografiaAllegro.cpp$(DependSuffix): src/LibreriaJuego/TipografiaAllegro.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/LibreriaJuego_TipografiaAllegro.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/LibreriaJuego_TipografiaAllegro.cpp$(DependSuffix) -MM "src/LibreriaJuego/TipografiaAllegro.cpp"
+
+$(IntermediateDirectory)/LibreriaJuego_TipografiaAllegro.cpp$(PreprocessSuffix): src/LibreriaJuego/TipografiaAllegro.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/LibreriaJuego_TipografiaAllegro.cpp$(PreprocessSuffix) "src/LibreriaJuego/TipografiaAllegro.cpp"
+
+$(IntermediateDirectory)/LibreriaJuegoSFML_GraficadorSFML.cpp$(ObjectSuffix): src/LibreriaJuegoSFML/GraficadorSFML.cpp $(IntermediateDirectory)/LibreriaJuegoSFML_GraficadorSFML.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/LibreriaJuegoSFML/GraficadorSFML.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/LibreriaJuegoSFML_GraficadorSFML.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/LibreriaJuegoSFML_GraficadorSFML.cpp$(DependSuffix): src/LibreriaJuegoSFML/GraficadorSFML.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/LibreriaJuegoSFML_GraficadorSFML.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/LibreriaJuegoSFML_GraficadorSFML.cpp$(DependSuffix) -MM "src/LibreriaJuegoSFML/GraficadorSFML.cpp"
+
+$(IntermediateDirectory)/LibreriaJuegoSFML_GraficadorSFML.cpp$(PreprocessSuffix): src/LibreriaJuegoSFML/GraficadorSFML.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/LibreriaJuegoSFML_GraficadorSFML.cpp$(PreprocessSuffix) "src/LibreriaJuegoSFML/GraficadorSFML.cpp"
+
+$(IntermediateDirectory)/LibreriaJuegoSFML_PantallaSFML.cpp$(ObjectSuffix): src/LibreriaJuegoSFML/PantallaSFML.cpp $(IntermediateDirectory)/LibreriaJuegoSFML_PantallaSFML.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/LibreriaJuegoSFML/PantallaSFML.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/LibreriaJuegoSFML_PantallaSFML.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/LibreriaJuegoSFML_PantallaSFML.cpp$(DependSuffix): src/LibreriaJuegoSFML/PantallaSFML.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/LibreriaJuegoSFML_PantallaSFML.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/LibreriaJuegoSFML_PantallaSFML.cpp$(DependSuffix) -MM "src/LibreriaJuegoSFML/PantallaSFML.cpp"
+
+$(IntermediateDirectory)/LibreriaJuegoSFML_PantallaSFML.cpp$(PreprocessSuffix): src/LibreriaJuegoSFML/PantallaSFML.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/LibreriaJuegoSFML_PantallaSFML.cpp$(PreprocessSuffix) "src/LibreriaJuegoSFML/PantallaSFML.cpp"
+
+$(IntermediateDirectory)/LibreriaJuegoSFML_TipografiaSFML.cpp$(ObjectSuffix): src/LibreriaJuegoSFML/TipografiaSFML.cpp $(IntermediateDirectory)/LibreriaJuegoSFML_TipografiaSFML.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/LibreriaJuegoSFML/TipografiaSFML.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/LibreriaJuegoSFML_TipografiaSFML.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/LibreriaJuegoSFML_TipografiaSFML.cpp$(DependSuffix): src/LibreriaJuegoSFML/TipografiaSFML.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/LibreriaJuegoSFML_TipografiaSFML.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/LibreriaJuegoSFML_TipografiaSFML.cpp$(DependSuffix) -MM "src/LibreriaJuegoSFML/TipografiaSFML.cpp"
+
+$(IntermediateDirectory)/LibreriaJuegoSFML_TipografiaSFML.cpp$(PreprocessSuffix): src/LibreriaJuegoSFML/TipografiaSFML.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/LibreriaJuegoSFML_TipografiaSFML.cpp$(PreprocessSuffix) "src/LibreriaJuegoSFML/TipografiaSFML.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

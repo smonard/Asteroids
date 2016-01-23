@@ -12,11 +12,11 @@ NaveEspacial::NaveEspacial(PosicionPantalla nposicion, Color * ncolor)
 
 void NaveEspacial::dibujarse()
 {
-    CoreLib::obtenerInstancia()->aplicarTransformacion(posicion, orientacion);
-    CoreLib::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(-8, 9),  PosicionPantalla(0, -11)), *color, 4.0f); 
-    CoreLib::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(0, -11),  PosicionPantalla( 8, 9)), *color, 4.0f); 
-    CoreLib::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(-6, 4),  PosicionPantalla(-1, 4)), *color, 4.0f); 
-    CoreLib::obtenerInstancia()->dibujarLinea(Linea( PosicionPantalla(6, 4),  PosicionPantalla( 1, 4)), *color, 4.0f);
+    graficador->aplicarTransformacion(posicion, orientacion);
+    graficador->dibujarLinea(Linea( PosicionPantalla(-8, 9),  PosicionPantalla(0, -11)), *color, 4.0f); 
+    graficador->dibujarLinea(Linea( PosicionPantalla(0, -11),  PosicionPantalla( 8, 9)), *color, 4.0f); 
+    graficador->dibujarLinea(Linea( PosicionPantalla(-6, 4),  PosicionPantalla(-1, 4)), *color, 4.0f); 
+    graficador->dibujarLinea(Linea( PosicionPantalla(6, 4),  PosicionPantalla( 1, 4)), *color, 4.0f);
 }
 
 const PosicionPantalla& NaveEspacial::obtenerPosicion() const
@@ -38,6 +38,7 @@ ObjetoGraficoInterfaz* NaveEspacial::disparar()
 {
     Color *color_rojo = new Color(255,0,0,255);
     ObjetoGraficoInterfaz* rayo = FabricaObjetoGrafica::obtenerInstancia()->crearObjetoVisual(rayoLaser, posicion, color_rojo);
+    (*rayo).fijarGraficador(graficador);
     return rayo;
 }
 

@@ -1,8 +1,9 @@
-#ifndef GESTORMENSAJES_HPP
+/*#ifndef GESTORMENSAJES_HPP
 #define GESTORMENSAJES_HPP
 
-#define RUTA_TIPOGRAFIA "/System/Library/Fonts/Menlo.ttc" 
-#include "../Base/CoreLib.h"
+#define RUTA_TIPOGRAFIA "/System/Library/Fonts/Menlo.ttc"
+#include "../ClasesDominio/Color.hpp" 
+#include "../ClasesDominio/Tipografia.hpp"
 
 class GestorMensajes
 {
@@ -18,7 +19,7 @@ public:
     }
     
     void dibujarTexto(string texto, PosicionPantalla posicion){
-        CoreLib::obtenerInstancia()->dibujarTexto(font, color, texto, posicion);
+        font->dibujarTexto(font, color, texto, posicion);
     }
     
     ~GestorMensajes()
@@ -30,3 +31,4 @@ public:
 };
 
 #endif // GESTORMENSAJES_HPP
+*/

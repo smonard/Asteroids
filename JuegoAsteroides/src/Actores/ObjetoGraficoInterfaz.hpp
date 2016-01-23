@@ -6,6 +6,9 @@
 #include "../ClasesDominio/Color.hpp"
 #include "ActoresEnumeracion.hpp"
 
+#include "../ClasesDominio/Graficador.hpp"
+#include "../ClasesDominio/Pantalla.hpp"
+
 class ObjetoGraficoInterfaz
 {
     
@@ -21,22 +24,32 @@ protected:
      
     Color * color;
     
+    Graficador* graficador;
+
+    
 public:
 
     ObjetoGraficoInterfaz(PosicionPantalla nposicion, Color * ncolor){
         posicion = nposicion;
         color = ncolor;
-    }    
+    }  
+  
     const float& obtenerVelocidad(){
         return velocidad;
     }
+    
+    const ObjetoGraficoInterfaz* fijarGraficador(Graficador* graf){
+        this->graficador = graf;
+        return this;
+    }
+    
     const ObjetoGraficoInterfaz& fijarVelocidad(float nvelocidad){
         this->velocidad = nvelocidad;
         return *this;
     }
     
-    bool estaFueraDeLaPantalla(){
-       return  !((this)->obtenerPosicion().GetY() < CoreLib::obtenerInstancia()->obtenerAlto() && (this)->obtenerPosicion().GetY() > 0);
+    bool estaFueraDeLaPantalla(float altoPantalla){
+       return  !((this)->obtenerPosicion().GetY() < altoPantalla && (this)->obtenerPosicion().GetY() > 0);
     }
 
     bool estaEnPosicionSimilarCon(ObjetoGraficoInterfaz* objVisual2){
@@ -52,7 +65,7 @@ public:
     virtual const PosicionPantalla& obtenerPosicion() const {};
     virtual bool esDeTipo(actorEnum tipoActor) {};
     virtual ~ObjetoGraficoInterfaz(){
-        delete color;
+        //delete color;
     }
     
 };

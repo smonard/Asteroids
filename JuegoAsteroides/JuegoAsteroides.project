@@ -59,6 +59,27 @@
       <File Name="src/ClasesDominio/Color.hpp"/>
       <File Name="src/ClasesDominio/Pantalla.hpp"/>
       <File Name="src/ClasesDominio/Tipografia.hpp"/>
+      <File Name="src/ClasesDominio/Graficador.hpp"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="LibreriaJuego">
+      <File Name="src/LibreriaJuego/GraficadorAllegro.h"/>
+      <File Name="src/LibreriaJuego/GraficadorAllegro.cpp"/>
+      <File Name="src/LibreriaJuego/PantallaAllegro.h"/>
+      <File Name="src/LibreriaJuego/PantallaAllegro.cpp"/>
+      <File Name="src/LibreriaJuego/TipografiaAllegro.h"/>
+      <File Name="src/LibreriaJuego/TipografiaAllegro.cpp"/>
+      <File Name="src/LibreriaJuego/LibreriaAllegro.hpp"/>
+    </VirtualDirectory>
+    <File Name="src/LibreriaJuego.hpp"/>
+    <VirtualDirectory Name="LibreriaJuegoSFML">
+      <File Name="src/LibreriaJuegoSFML/GraficadorSFML.h"/>
+      <File Name="src/LibreriaJuegoSFML/GraficadorSFML.cpp"/>
+      <File Name="src/LibreriaJuegoSFML/LibreriaSFML.hpp"/>
+      <File Name="src/LibreriaJuegoSFML/PantallaSFML.h"/>
+      <File Name="src/LibreriaJuegoSFML/PantallaSFML.cpp"/>
+      <File Name="src/LibreriaJuegoSFML/TipografiaSFML.h"/>
+      <File Name="src/LibreriaJuegoSFML/TipografiaSFML.cpp"/>
+      <File Name="src/LibreriaJuegoSFML/SFML_API.hpp"/>
     </VirtualDirectory>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
@@ -78,9 +99,13 @@
         <IncludePath Value="./"/>
         <IncludePath Value="/usr/local/lib"/>
         <IncludePath Value="/usr/local/include"/>
+        <IncludePath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/include"/>
       </Compiler>
       <Linker Options="" Required="yes">
         <LibraryPath Value="/usr/local/lib"/>
+        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/lib"/>
+        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/Frameworks"/>
+        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/extlibs"/>
         <Library Value="liballegro.dylib"/>
         <Library Value="liballegro_acodec.dylib"/>
         <Library Value="liballegro_audio.dylib"/>
@@ -93,6 +118,9 @@
         <Library Value="liballegro_primitives.dylib"/>
         <Library Value="liballegro_ttf.dylib"/>
         <Library Value="liballegro_main.dylib"/>
+        <Library Value="sfml-graphics"/>
+        <Library Value="sfml-window"/>
+        <Library Value="sfml-system"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/libJuegoAsteroides.dylib" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>

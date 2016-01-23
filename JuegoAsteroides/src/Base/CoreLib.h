@@ -1,4 +1,5 @@
-#ifndef CORELIB_H
+/*
+ * #ifndef CORELIB_H
 #define CORELIB_H
 
 #include "AllegroAPI.hpp"
@@ -47,13 +48,13 @@ public:
 
     int inicializarComponentesAllegro();
 
-    Pantalla* crearPantalla();
+    //Pantalla* crearPantalla();
 
-    void destruirPantalla(Pantalla* display);
+    //void destruirPantalla(Pantalla* display);
 
-    void dibujarLinea(Linea linea, Color color, float grosor);
+    //void dibujarLinea(Linea linea, Color color, float grosor);
 
-    void aplicarTransformacion(PosicionPantalla posicion, float orientacion);
+    //void aplicarTransformacion(PosicionPantalla posicion, float orientacion);
 
     Tipografia * cargarFuente(char * ruta, char tamaño);
     
@@ -61,7 +62,8 @@ public:
     
     Color * obtenerColor(unsigned char red,unsigned char green,unsigned char blue);
     
-    void pintarPantalla(Color color);
+    //void pintarPantalla(Color color);
 };
 
 #endif // ALLEGROAPI_H
+*/

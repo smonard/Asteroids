@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=josilvam
-Date                   :=03/01/2016
+Date                   :=23/01/2016
 CodeLitePath           :="/Users/josilvam/Library/Application Support/codelite"
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -dynamiclib -fPIC
@@ -39,9 +39,9 @@ LinkOptions            :=
 IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). $(IncludeSwitch)/Users/josilvam/OpenSourceProjects/unittest-cpp/UnitTest++/ $(IncludeSwitch)/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/ 
 IncludePCH             := 
 RcIncludePath          := 
-Libs                   := $(LibrarySwitch)UnitTest++ $(LibrarySwitch)JuegoAsteroides $(LibrarySwitch)allegro $(LibrarySwitch)allegro_acodec $(LibrarySwitch)allegro_audio $(LibrarySwitch)allegro_color $(LibrarySwitch)allegro_dialog $(LibrarySwitch)allegro_font $(LibrarySwitch)allegro_image $(LibrarySwitch)allegro_memfile $(LibrarySwitch)allegro_physfs $(LibrarySwitch)allegro_primitives $(LibrarySwitch)allegro_ttf $(LibrarySwitch)allegro_main 
-ArLibs                 :=  "libUnitTest++.a" "libJuegoAsteroides.dylib" "liballegro.dylib" "liballegro_acodec.dylib" "liballegro_audio.dylib" "liballegro_color.dylib" "liballegro_dialog.dylib" "liballegro_font.dylib" "liballegro_image.dylib" "liballegro_memfile.dylib" "liballegro_physfs.dylib" "liballegro_primitives.dylib" "liballegro_ttf.dylib" "liballegro_main.dylib" 
-LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/Users/josilvam/OpenSourceProjects/unittest-cpp/builds $(LibraryPathSwitch)/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/Debug $(LibraryPathSwitch)/usr/local/lib 
+Libs                   := $(LibrarySwitch)JuegoAsteroides $(LibrarySwitch)allegro $(LibrarySwitch)allegro_acodec $(LibrarySwitch)allegro_audio $(LibrarySwitch)allegro_color $(LibrarySwitch)allegro_dialog $(LibrarySwitch)allegro_font $(LibrarySwitch)allegro_image $(LibrarySwitch)allegro_memfile $(LibrarySwitch)allegro_physfs $(LibrarySwitch)allegro_primitives $(LibrarySwitch)allegro_ttf $(LibrarySwitch)allegro_main $(LibrarySwitch)sfml-graphics $(LibrarySwitch)sfml-window $(LibrarySwitch)sfml-system 
+ArLibs                 :=  "libJuegoAsteroides.dylib" "liballegro.dylib" "liballegro_acodec.dylib" "liballegro_audio.dylib" "liballegro_color.dylib" "liballegro_dialog.dylib" "liballegro_font.dylib" "liballegro_image.dylib" "liballegro_memfile.dylib" "liballegro_physfs.dylib" "liballegro_primitives.dylib" "liballegro_ttf.dylib" "liballegro_main.dylib" "sfml-graphics" "sfml-window" "sfml-system" 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)/Users/josilvam/OpenSourceProjects/unittest-cpp/builds $(LibraryPathSwitch)/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/Debug $(LibraryPathSwitch)/usr/local/lib $(LibraryPathSwitch)/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/lib $(LibraryPathSwitch)/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/Frameworks $(LibraryPathSwitch)/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/extlibs 
 
 ##
 ## Common variables

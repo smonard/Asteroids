@@ -1,22 +1,26 @@
 #include <stdio.h>
+#include <cstdlib>
+#include <iostream>
+//#include "base/juegoAsteroides.h"
+//#include "ClasesDominio/Pantalla.hpp"
+#include "LibreriaJuego/LibreriaAllegro.hpp"
+#include "LibreriaJuegoSFML/LibreriaSFML.hpp"
+//#include "LibreriaJuego.hpp"
 
-#include "allegro5/allegro.h"
-#include "base/juegoAsteroides.h"
-#include "ClasesDominio/Pantalla.hpp"
-#include "src/UtilitariosPruebas/PosicionPantallaPruebas.hpp"
 
 
 
-int main(int argc, char **argv){
-
-    CoreLib& allegro = *CoreLib::obtenerInstancia();
-    allegro.inicializarComponentesAllegro();
-    Pantalla *display = allegro.crearPantalla();
-    JuegoAsteroides* juego = new JuegoAsteroides();
+int main(int argc, char **argv)
+{
+    sf::RenderWindow window(sf::VideoMode(600, 600), "Juego Asteroides");
+    /*
+    LibreriaJuego *libreria = new LibreriaAllegro();
+    libreria->init();
+    JuegoAsteroides* juego = new JuegoAsteroides(libreria);
     sleep(1);
     (*juego).iniciarJuego();
     delete juego;
-    allegro.destruirPantalla(display);
+    delete libreria;*/
     return 0;
 }
 

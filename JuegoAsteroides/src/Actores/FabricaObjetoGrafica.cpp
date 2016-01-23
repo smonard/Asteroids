@@ -26,7 +26,7 @@ void FabricaObjetoGrafica::liberarse()
 
 ObjetoGraficoInterfaz* FabricaObjetoGrafica::crearObjetoVisual(actorEnum actor_a_crear, PosicionPantalla nposicion, Color * ncolor)
 {
-    ObjetoGraficoInterfaz* objeto = NULL;
+    ObjetoGraficoInterfaz* objeto = 0;
     switch(actor_a_crear)
     {
         case asteroide:
@@ -46,11 +46,11 @@ bool FabricaObjetoGrafica::esDeTipo(actorEnum actor_tipo, ObjetoGraficoInterfaz*
     switch(actor_tipo)
     {
         case asteroide:
-            return dynamic_cast<Asteroide*> ((objetoAdeterminar) ) != NULL;
+            return dynamic_cast<Asteroide*> ((objetoAdeterminar) ) != 0;
         case naveEspacial:
-            return dynamic_cast<NaveEspacial*> ((objetoAdeterminar) ) != NULL;
+            return dynamic_cast<NaveEspacial*> ((objetoAdeterminar) ) != 0;
         case rayoLaser :
-            return dynamic_cast<RayoLaser*> ((objetoAdeterminar) ) != NULL;
+            return dynamic_cast<RayoLaser*> ((objetoAdeterminar) ) != 0;
         default:
         return false;
     }

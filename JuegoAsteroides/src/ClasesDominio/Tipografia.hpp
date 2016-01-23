@@ -2,36 +2,23 @@
 #define TIPOGRAFIA_HPP
 
 
-#include "../Base/AllegroAPI.hpp"
-
+#include "Color.hpp"
+#include "../Linea.hpp"
 
 class Tipografia
 {
+protected:
 
-private:
-    ALLEGRO_FONT* fuente;
-    
-    void fijarFuente(ALLEGRO_FONT* fuente)
-    {
-        this->fuente = fuente;
-    }
-    
+    virtual bool cargarFuente(char * ruta, char tamaño) = 0;
+
 public:
 
-    Tipografia(ALLEGRO_FONT* fuente)
-    {
-        fijarFuente(fuente);
-    }
+    Tipografia(){}
     
-    ALLEGRO_FONT* obtenerfuente()
-    {
-        return fuente;
-    }
+    virtual void dibujarTexto( Color * color ,string texto, PosicionPantalla posicion) = 0; 
+
+    virtual ~Tipografia(){}
     
-    ~Tipografia()
-    {
-        al_destroy_font(fuente);
-    }
 };
 
 #endif // TIPOGRAFIA_HPP

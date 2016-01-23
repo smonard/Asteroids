@@ -21,7 +21,6 @@
   <Dependencies/>
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
-    <File Name="src/spike.h"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>
@@ -45,7 +44,9 @@
         <LibraryPath Value="/Users/josilvam/OpenSourceProjects/unittest-cpp/builds"/>
         <LibraryPath Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/Debug"/>
         <LibraryPath Value="/usr/local/lib"/>
-        <Library Value="libUnitTest++.a"/>
+        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/lib"/>
+        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/Frameworks"/>
+        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/extlibs"/>
         <Library Value="libJuegoAsteroides.dylib"/>
         <Library Value="liballegro.dylib"/>
         <Library Value="liballegro_acodec.dylib"/>
@@ -59,6 +60,9 @@
         <Library Value="liballegro_primitives.dylib"/>
         <Library Value="liballegro_ttf.dylib"/>
         <Library Value="liballegro_main.dylib"/>
+        <Library Value="sfml-graphics"/>
+        <Library Value="sfml-window"/>
+        <Library Value="sfml-system"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>

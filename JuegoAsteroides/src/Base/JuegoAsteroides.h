@@ -10,6 +10,8 @@
 #include "EventosAllegro.h"
 #include "../Utilitarios/Observador.hpp"
 #include "../Utilitarios/GestorMensajes.hpp"
+#include "../ClasesDominio/Color.hpp"
+#include "../LibreriaJuego.hpp"
 #include <list>
 #include <cstdlib>
 #include <iostream>
@@ -25,7 +27,7 @@ private:
     int frecuenciaActualizacionPantalla = 5000;
     
     EventosAllegro* eventosAllegro;
-    GestorMensajes * gestorMensajes;
+    
     
     FabricaObjetoGrafica * fabricaActores;
     NaveEspacial* naveEspacialActual = 0;
@@ -44,9 +46,12 @@ private:
     
     void destruirObjeto(ObjetoGraficoInterfaz* objetoAdestruir);
     void borrarPantalla();
+    
+    Pantalla * pantalla;
  
+    Graficador* graficador;
 public:
-    JuegoAsteroides();
+    JuegoAsteroides(LibreriaJuego *core);
     bool getSigueEjecutando();
     void iniciarJuego();
     void detenerJuego();

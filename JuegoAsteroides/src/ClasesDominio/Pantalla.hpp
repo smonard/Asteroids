@@ -1,34 +1,35 @@
 #ifndef PANTALLA_HPP
 #define PANTALLA_HPP
 
-#include "../Base/AllegroAPI.hpp"
-
+#include "Color.hpp"
 
 class Pantalla
 {
-private:
-    ALLEGRO_DISPLAY* display;
     
-    void fijarDisplay(ALLEGRO_DISPLAY* display)
-    {
-        this->display = display;
-    }
+protected:
+    int ancho_pantalla = 600;
+    int alto_pantalla = 600;
     
 public:
     
-    Pantalla(ALLEGRO_DISPLAY* display)
+    int obtenerAlto() const
     {
-        fijarDisplay(display);
+        return alto_pantalla;
     }
     
-    ALLEGRO_DISPLAY* obtenerDisplay()
+    int obtenerAncho() const
     {
-        return display;
+        return ancho_pantalla;
     }
     
-    virtual ~Pantalla()
+    Pantalla()
     {
     }
+    
+    virtual bool crearPantalla() = 0;
+    virtual void destruirPantalla() = 0;
+    virtual void pintarPantalla(Color color) = 0;
+    virtual ~Pantalla(){}
 
 };
 

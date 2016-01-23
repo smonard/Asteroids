@@ -24,8 +24,8 @@ const PosicionPantalla& RayoLaser::obtenerPosicion() const
 void RayoLaser::dibujarse()
 {
     avanzar();
-    CoreLib::obtenerInstancia()->aplicarTransformacion(posicion,orientacion);
-    CoreLib::obtenerInstancia()->dibujarLinea(Linea(PosicionPantalla(0,9), PosicionPantalla(0,-11)), *color , 4.0f);
+    graficador->aplicarTransformacion(posicion,orientacion);
+    graficador->dibujarLinea(Linea(PosicionPantalla(0,9), PosicionPantalla(0,-11)), *color , 4.0f);
 }
 
 bool RayoLaser::esDeTipo(actorEnum tipoActor){
