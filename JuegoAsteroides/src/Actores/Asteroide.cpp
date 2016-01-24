@@ -4,7 +4,7 @@ Asteroide::Asteroide(PosicionPantalla nposicion, Color * ncolor)
     :ObjetoGraficoInterfaz(nposicion,ncolor)
 {
     variacion_orientacion = 0.0000002;
-    velocidad = 1.5f;
+    velocidad = 2.5f;
 }
 const PosicionPantalla& Asteroide::obtenerPosicion() const
 {

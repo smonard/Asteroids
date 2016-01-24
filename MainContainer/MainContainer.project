@@ -34,35 +34,31 @@
       </Linker>
       <ResourceCompiler Options=""/>
     </GlobalSettings>
-    <Configuration Name="Debug" CompilerType="GCC" DebuggerType="LLDB Debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
-      <Compiler Options="-g;-O0;-std=c++14;-std=c++11" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+    <Configuration Name="Debug" CompilerType="GCC" DebuggerType="" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-O0;-std=c++11" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="."/>
-        <IncludePath Value="/Users/josilvam/OpenSourceProjects/unittest-cpp/UnitTest++/"/>
-        <IncludePath Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/src/"/>
+        <IncludePath Value="/home/jose/Projects/JuegoAsteroides/juego-asteroides/JuegoAsteroides/src"/>
       </Compiler>
-      <Linker Options="" Required="yes">
-        <LibraryPath Value="/Users/josilvam/OpenSourceProjects/unittest-cpp/builds"/>
-        <LibraryPath Value="/Users/josilvam/OpenSourceProjects/JuegoAsteroides/JuegoAsteroides/Debug"/>
+      <Linker Options="-s" Required="yes">
         <LibraryPath Value="/usr/local/lib"/>
-        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/lib"/>
-        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/Frameworks"/>
-        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/extlibs"/>
-        <Library Value="libJuegoAsteroides.dylib"/>
-        <Library Value="liballegro.dylib"/>
-        <Library Value="liballegro_acodec.dylib"/>
-        <Library Value="liballegro_audio.dylib"/>
-        <Library Value="liballegro_color.dylib"/>
-        <Library Value="liballegro_dialog.dylib"/>
-        <Library Value="liballegro_font.dylib"/>
-        <Library Value="liballegro_image.dylib"/>
-        <Library Value="liballegro_memfile.dylib"/>
-        <Library Value="liballegro_physfs.dylib"/>
-        <Library Value="liballegro_primitives.dylib"/>
-        <Library Value="liballegro_ttf.dylib"/>
-        <Library Value="liballegro_main.dylib"/>
+        <LibraryPath Value="/home/jose/Projects/SFML-2.3.2/lib"/>
+        <LibraryPath Value="/home/jose/Projects/JuegoAsteroides/juego-asteroides/JuegoAsteroides/Debug"/>
+        <Library Value="liballegro"/>
+        <Library Value="liballegro_acodec"/>
+        <Library Value="liballegro_audio"/>
+        <Library Value="liballegro_color"/>
+        <Library Value="liballegro_dialog"/>
+        <Library Value="liballegro_font"/>
+        <Library Value="liballegro_image"/>
+        <Library Value="liballegro_memfile"/>
+        <Library Value="liballegro_physfs"/>
+        <Library Value="liballegro_primitives"/>
+        <Library Value="liballegro_ttf"/>
+        <Library Value="liballegro_main"/>
         <Library Value="sfml-graphics"/>
         <Library Value="sfml-window"/>
         <Library Value="sfml-system"/>
+        <Library Value="libJuegoAsteroides.dylib"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>

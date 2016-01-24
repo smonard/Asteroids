@@ -3,18 +3,29 @@
 
 
 
-#include "../Actores/naveEspacial.h"
+#include "../Actores/NaveEspacial.h"
 #include "../Actores/Asteroide.h"
 #include "../Actores/ObjetoGraficoInterfaz.hpp"
 #include "../Actores/FabricaObjetoGrafica.h"
-#include "EventosAllegro.h"
+#include "EventosTeclado.hpp"
 #include "../Utilitarios/Observador.hpp"
 #include "../Utilitarios/GestorMensajes.hpp"
 #include "../ClasesDominio/Color.hpp"
 #include "../LibreriaJuego.hpp"
-#include <list>
+#include <stdlib.h>
 #include <cstdlib>
 #include <iostream>
+#include <stdio.h>
+#include <stdarg.h>
+#include <list>
+#include <cstdlib>
+#include <mutex>
+#include <string>
+#include <thread>
+#include <deque>
+#include <unistd.h>
+
+using namespace std;
 
 class JuegoAsteroides : public Observador
 {
@@ -23,10 +34,10 @@ private:
     int numeroVidas;
     long puntaje = 0;
     bool sigueEjecutando;
-    int frecuenciaCreacionAsteroides = 300000;
-    int frecuenciaActualizacionPantalla = 5000;
+    int frecuenciaCreacionAsteroides = 5000000;//900000;
+    int frecuenciaActualizacionPantalla = 15000;//5000;
     
-    EventosAllegro* eventosAllegro;
+    EventosTeclado* eventosHW;
     
     
     FabricaObjetoGrafica * fabricaActores;

@@ -14,12 +14,12 @@ private:
     sf::RenderWindow* display;
 
 public:
-    PantallaSFML(sf::RenderWindow* display);
+    PantallaSFML();
     ~PantallaSFML();
     bool crearPantalla();
     void destruirPantalla();
     void pintarPantalla(Color color);
-    sf::RenderWindow* getDisplay() const
+    sf::RenderWindow* getDisplay()
     {
         return display;
     }

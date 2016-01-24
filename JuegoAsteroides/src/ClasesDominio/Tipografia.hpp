@@ -4,12 +4,15 @@
 
 #include "Color.hpp"
 #include "../Linea.hpp"
+#include <string>
+
+using namespace std;
 
 class Tipografia
 {
 protected:
 
-    virtual bool cargarFuente(char * ruta, char tamaño) = 0;
+    //virtual bool cargarFuente(char * ruta, char tamaño) = 0;
 
 public:
 

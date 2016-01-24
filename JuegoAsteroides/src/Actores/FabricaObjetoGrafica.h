@@ -7,6 +7,7 @@
 #include "NaveEspacial.h"
 #include "RayoLaser.h"
 #include "Asteroide.h"
+#include <iostream>
 
 
 class FabricaObjetoGrafica

@@ -1,7 +1,7 @@
 #ifndef NAVEESPACIAL_H
 #define NAVEESPACIAL_H
 
-#include "rayoLaser.h"
+#include "RayoLaser.h"
 #include "ObjetoGraficoInterfaz.hpp"
 #include "FabricaObjetoGrafica.h"
 

@@ -19,6 +19,7 @@ bool PantallaAllegro::crearPantalla(){
 }
 
 void PantallaAllegro::pintarPantalla(Color color){
+    al_flip_display();
     al_clear_to_color(al_map_rgb(color.GetRed(), color.GetGreen(), color.GetBlue()));
 }
 

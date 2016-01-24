@@ -5,6 +5,7 @@
 #include "GraficadorAllegro.h"
 #include "PantallaAllegro.h"
 #include "TipografiaAllegro.h"
+#include "EventosAllegro.h"
 #include "../LibreriaJuego.hpp"
 
 class LibreriaAllegro : public LibreriaJuego
@@ -14,10 +15,12 @@ public:
     LibreriaAllegro()
     {
         printf("Instanciando Allegro");
+        init();
         graficador = new GraficadorAllegro();
         tipografia = new TipografiaAllegro();
         pantalla = new PantallaAllegro();
-        
+        eventos =  new EventosAllegro();
+        pantalla->crearPantalla();
     }
     bool init()
     {
@@ -39,7 +42,7 @@ public:
                 throw new AllegroTecladoExcepcion();
                 return 0;
             }
-            pantalla->crearPantalla();
+            
         }
         return 1;
     }   
@@ -48,6 +51,7 @@ public:
         delete graficador;
         delete tipografia;
         delete pantalla;
+        delete eventos;
     }
 
 };

@@ -1,6 +1,4 @@
 #include "JuegoAsteroides.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 
 bool JuegoAsteroides::getSigueEjecutando(){
@@ -10,8 +8,8 @@ bool JuegoAsteroides::getSigueEjecutando(){
 JuegoAsteroides::JuegoAsteroides(LibreriaJuego* core){
     pantalla = core->GetPantalla();
     graficador = core->GetGraficador();
-    eventosAllegro = new EventosAllegro();
-    eventosAllegro->adjuntarObservador(this);
+    eventosHW = core->GetControladorEvents();
+    eventosHW->adjuntarObservador(this);
     PosicionPantalla posicionNave(pantalla->obtenerAncho() / 2,pantalla->obtenerAlto()-20);
     fabricaActores = FabricaObjetoGrafica::obtenerInstancia();
     Color *color = new Color(0,150,0);
@@ -50,7 +48,7 @@ void JuegoAsteroides::iniciarCreacionAsteroides() {
 void JuegoAsteroides::iniciarJuego(){
     sigueEjecutando = true;
     iniciarCreacionAsteroides();
-    iniciarMetricas();
+    //iniciarMetricas();
     buclePrincipal();
 }
 
@@ -61,22 +59,22 @@ void JuegoAsteroides::buclePrincipal(){
         nave_mutex.lock();
         actualizarObjetosVisuales();
         nave_mutex.unlock();
-        al_flip_display();
+        //eventosHW->iniciarEscuchaEventos();
     }
 }
 
 void JuegoAsteroides::ejecutarEventoTeclado(int teclaPresionada){
-    switch(teclaPresionada) {
-        case ALLEGRO_KEY_LEFT:
+   switch(teclaPresionada) {
+        case izquierda:
             (*naveEspacialActual).irIzquierda();
         break;
-        case ALLEGRO_KEY_RIGHT:
+        case derecha:
             (*naveEspacialActual).irDerecha();
         break;
-        case ALLEGRO_KEY_SPACE:
+        case espacio:
             lista_actores.push_back((*naveEspacialActual).disparar());
         break;
-        case ALLEGRO_KEY_ESCAPE:
+        case esc:
             sigueEjecutando = false;
         break;
         default :
@@ -141,7 +139,7 @@ bool JuegoAsteroides::estaTocadoPorRayo(ObjetoGraficoInterfaz* asteroide){
 }
 
 void JuegoAsteroides::borrarPantalla(){
-    Color* color = new Color(255,255,255);
+    Color* color = new Color(0,0,0);
     pantalla->pintarPantalla(*color);
 }
 
@@ -154,7 +152,6 @@ JuegoAsteroides::~JuegoAsteroides(){
     subProcesoCreacionAsteoides->join();
     fabricaActores->liberarse();
     //delete gestorMensajes;
-    delete eventosAllegro;
     destruirObjetos();
 }
 

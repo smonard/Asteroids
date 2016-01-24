@@ -35,11 +35,10 @@
     <VirtualDirectory Name="Base">
       <File Name="src/Base/JuegoAsteroides.h"/>
       <File Name="src/Base/JuegoAsteroides.cpp"/>
-      <File Name="src/Base/EventosAllegro.h"/>
-      <File Name="src/Base/EventosAllegro.cpp"/>
       <File Name="src/Base/CoreLib.h"/>
       <File Name="src/Base/CoreLib.cpp"/>
       <File Name="src/Base/AllegroAPI.hpp"/>
+      <File Name="src/Base/EventosTeclado.hpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Utilitarios">
       <File Name="src/Posicion.hpp"/>
@@ -69,6 +68,8 @@
       <File Name="src/LibreriaJuego/TipografiaAllegro.h"/>
       <File Name="src/LibreriaJuego/TipografiaAllegro.cpp"/>
       <File Name="src/LibreriaJuego/LibreriaAllegro.hpp"/>
+      <File Name="src/LibreriaJuego/EventosAllegro.h"/>
+      <File Name="src/LibreriaJuego/EventosAllegro.cpp"/>
     </VirtualDirectory>
     <File Name="src/LibreriaJuego.hpp"/>
     <VirtualDirectory Name="LibreriaJuegoSFML">
@@ -80,13 +81,16 @@
       <File Name="src/LibreriaJuegoSFML/TipografiaSFML.h"/>
       <File Name="src/LibreriaJuegoSFML/TipografiaSFML.cpp"/>
       <File Name="src/LibreriaJuegoSFML/SFML_API.hpp"/>
+      <File Name="src/LibreriaJuegoSFML/EventosTecladoSFML.h"/>
+      <File Name="src/LibreriaJuegoSFML/EventosTecladoSFML.cpp"/>
     </VirtualDirectory>
+    <File Name="src/main.cpp"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>
-  <Settings Type="Dynamic Library">
+  <Settings Type="Executable">
     <GlobalSettings>
-      <Compiler Options="-std=c++14;-std=c++11" C_Options="" Assembler="">
+      <Compiler Options="" C_Options="" Assembler="">
         <IncludePath Value="."/>
       </Compiler>
       <Linker Options="">
@@ -94,36 +98,34 @@
       </Linker>
       <ResourceCompiler Options=""/>
     </GlobalSettings>
-    <Configuration Name="Debug" CompilerType="GCC" DebuggerType="LLDB Debugger" Type="Dynamic Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
-      <Compiler Options="-g;-O0;-std=c++14;-std=c++11" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+    <Configuration Name="Debug" CompilerType="gnu g++" DebuggerType="" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-fopenmp;-std=c++11;-fPIC" C_Options="-g;-O0;-Wall" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="./"/>
         <IncludePath Value="/usr/local/lib"/>
         <IncludePath Value="/usr/local/include"/>
-        <IncludePath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/include"/>
+        <IncludePath Value="/home/jose/Projects/SFML-2.3.2/include"/>
       </Compiler>
-      <Linker Options="" Required="yes">
-        <LibraryPath Value="/usr/local/lib"/>
-        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/lib"/>
-        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/Frameworks"/>
-        <LibraryPath Value="/Users/josilvam/Downloads/SFML-2.3.2-osx-clang-universal/extlibs"/>
-        <Library Value="liballegro.dylib"/>
-        <Library Value="liballegro_acodec.dylib"/>
-        <Library Value="liballegro_audio.dylib"/>
-        <Library Value="liballegro_color.dylib"/>
-        <Library Value="liballegro_dialog.dylib"/>
-        <Library Value="liballegro_font.dylib"/>
-        <Library Value="liballegro_image.dylib"/>
-        <Library Value="liballegro_memfile.dylib"/>
-        <Library Value="liballegro_physfs.dylib"/>
-        <Library Value="liballegro_primitives.dylib"/>
-        <Library Value="liballegro_ttf.dylib"/>
-        <Library Value="liballegro_main.dylib"/>
+      <Linker Options="-fopenmp;-fPIC" Required="yes">
+        <LibraryPath Value="/usr/local/lib/"/>
+        <LibraryPath Value="/home/jose/Projects/SFML-2.3.2/lib/"/>
+        <Library Value="liballegro"/>
+        <Library Value="liballegro_acodec"/>
+        <Library Value="liballegro_audio"/>
+        <Library Value="liballegro_color"/>
+        <Library Value="liballegro_dialog"/>
+        <Library Value="liballegro_font"/>
+        <Library Value="liballegro_image"/>
+        <Library Value="liballegro_memfile"/>
+        <Library Value="liballegro_physfs"/>
+        <Library Value="liballegro_primitives"/>
+        <Library Value="liballegro_ttf"/>
+        <Library Value="liballegro_main"/>
         <Library Value="sfml-graphics"/>
         <Library Value="sfml-window"/>
         <Library Value="sfml-system"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
-      <General OutputFile="$(IntermediateDirectory)/libJuegoAsteroides.dylib" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <General OutputFile="$(IntermediateDirectory)/JuegoAsteroides" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>
       </Environment>

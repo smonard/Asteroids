@@ -4,6 +4,7 @@
 #include "GraficadorSFML.h"
 #include "PantallaSFML.h"
 #include "TipografiaSFML.h"
+#include "EventosTecladoSFML.h"
 #include "../LibreriaJuego.hpp"
 #include "SFML_API.hpp"
 
@@ -12,17 +13,20 @@ class LibreriaSFML : public LibreriaJuego
 public:
 
 
-    LibreriaSFML(sf::RenderWindow* display)
+    LibreriaSFML()
     {
         printf("Instanciando SFML");
-        PantallaSFML *displayF = new PantallaSFML(display);
+        PantallaSFML *displayF = new PantallaSFML();
+        pantalla = displayF;
+        pantalla->crearPantalla();
         graficador = new GraficadorSFML(displayF->getDisplay());
         tipografia = new TipografiaSFML();
-        pantalla = displayF;
+        eventos = new EventosTecladoSFML(displayF->getDisplay());
     }
     
     bool init()
     {
+        
         return true;
     }
     

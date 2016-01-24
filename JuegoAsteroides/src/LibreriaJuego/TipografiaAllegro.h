@@ -13,7 +13,7 @@ class TipografiaAllegro : public Tipografia
 protected:
 
     ALLEGRO_FONT *tipo;
-    bool cargarFuente(char * ruta, char tamaño);
+    //bool cargarFuente(char * ruta, char tamaño);
 
 public:
     TipografiaAllegro();

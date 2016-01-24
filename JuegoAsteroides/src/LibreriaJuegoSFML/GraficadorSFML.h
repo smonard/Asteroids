@@ -13,6 +13,7 @@ class GraficadorSFML : public Graficador
 {
 private:
     sf::RenderWindow  *display;
+    PosicionPantalla *posicionRelativa;
 public:
     GraficadorSFML(sf::RenderWindow  *display);
     void dibujarLinea(Linea linea, Color color, float grosor) ;

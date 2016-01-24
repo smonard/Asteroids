@@ -12,7 +12,7 @@ class TipografiaSFML : public Tipografia
 {
 protected:
 
-    virtual bool cargarFuente(char * ruta, char tamaño);
+    //virtual bool cargarFuente(char * ruta, char tamaño);
 
 public:
 

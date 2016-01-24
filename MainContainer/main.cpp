@@ -1,26 +1,26 @@
 #include <stdio.h>
 #include <cstdlib>
 #include <iostream>
-//#include "base/juegoAsteroides.h"
+#include "Base/JuegoAsteroides.h"
 //#include "ClasesDominio/Pantalla.hpp"
 #include "LibreriaJuego/LibreriaAllegro.hpp"
-#include "LibreriaJuegoSFML/LibreriaSFML.hpp"
-//#include "LibreriaJuego.hpp"
+//#include "LibreriaJuegoSFML/LibreriaSFML.hpp"
+#include "LibreriaJuego.hpp"
 
 
 
 
 int main(int argc, char **argv)
 {
-    sf::RenderWindow window(sf::VideoMode(600, 600), "Juego Asteroides");
-    /*
+    //sf::RenderWindow window(sf::VideoMode(600, 600), "Juego Asteroides");
+    
     LibreriaJuego *libreria = new LibreriaAllegro();
     libreria->init();
     JuegoAsteroides* juego = new JuegoAsteroides(libreria);
     sleep(1);
     (*juego).iniciarJuego();
     delete juego;
-    delete libreria;*/
+    delete libreria;
     return 0;
 }
 

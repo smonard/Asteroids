@@ -11,7 +11,7 @@
 #include "../Utilitarios/Excepciones/AllegroInicializacionFallidaExcepcion.hpp"
 #include "../Utilitarios/Excepciones/AllegroPrimitivasExcepcion.hpp"
 #include "../Utilitarios/Excepciones/AllegroTecladoExcepcion.hpp"
-
+         
 
 
 
